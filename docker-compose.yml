@@ -1,0 +1,11 @@
+services:
+  compiiile-dev:
+    image: node:lts
+    environment: 
+      - SERVER_HOST=0.0.0.0
+    entrypoint: bash -c "yarn global add @compiiile/compiiile && /usr/local/bin/compiiile dev --host 0.0.0.0"
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - 4321:4321
